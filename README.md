@@ -5,11 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/GCountableUILabel.svg?style=flat)](http://cocoapods.org/pods/GCountableUILabel)
 [![Platform](https://img.shields.io/cocoapods/p/GCountableUILabel.svg?style=flat)](http://cocoapods.org/pods/GCountableUILabel)
 
-## Usage
+GCountableUILabel is animated UILabel. It's similar Vine' loop label.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+<img src="screenshot.gif" />
 
 ## Installation
 
