@@ -7,7 +7,7 @@
 
 GCountableUILabel is animated UILabel. It's similar Vine' loop label.
 
-<img src="screenshot.gif" />
+<img src="ss.gif" />
 
 ## Installation
 
