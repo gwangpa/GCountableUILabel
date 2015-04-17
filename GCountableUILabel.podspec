@@ -10,19 +10,16 @@
 Pod::Spec.new do |s|
   s.name             = "GCountableUILabel"
   s.version          = "0.1.0"
-  s.summary          = "A short description of GCountableUILabel."
+  s.summary          = "CountDown animation effect UILabel"
   s.description      = <<-DESC
-                       An optional longer description of GCountableUILabel
+                       Vine' loop animation style UILabel
 
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Just change text value in some loop
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/GCountableUILabel"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/gwangpa/GCountableUILabel"
   s.license          = 'MIT'
   s.author           = { "Daniel KIM" => "gwangpa@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/GCountableUILabel.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/gwangpa/GCountableUILabel.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -31,8 +28,4 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'GCountableUILabel' => ['Pod/Assets/*.png']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

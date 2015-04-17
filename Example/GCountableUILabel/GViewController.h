@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GCountableUILabel/GCountableUILabel.h>
 
 @interface GViewController : UIViewController
+
+@property (nonatomic, strong) IBOutlet GCountableUILabel *label;
+
+- (IBAction)animationTypeChange:(id)sender;
+- (IBAction)textAlignChange:(id)sender;
 
 @end

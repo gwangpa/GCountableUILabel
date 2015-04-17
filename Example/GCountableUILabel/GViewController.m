@@ -10,20 +10,73 @@
 
 @interface GViewController ()
 
+@property (nonatomic, assign) NSUInteger count;
+
 @end
 
 @implementation GViewController
 
 - (void)viewDidLoad
 {
+    // super
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // set default count
+    self.count = 1234;
+    
+    // configure label
+    [self.label setTextColor:[UIColor orangeColor]];
+    
+    // perform update count
+    [self performSelector:@selector(performUpdateCount) withObject:nil afterDelay:1.0f];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)performUpdateCount
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // increase count
+    self.count += (arc4random() % 50) + 1;
+    
+    // set text
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [_label setText:[formatter stringFromNumber:[NSNumber numberWithInteger:_count]]];
+    
+    // perform
+    [self performSelector:@selector(performUpdateCount) withObject:nil afterDelay:1.0f];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)animationTypeChange:(id)sender
+{
+    UISegmentedControl *control = (UISegmentedControl *)sender;
+    if (control.selectedSegmentIndex == 0) {
+        [_label setAnimationType:GCountableUILabelAnimationTypePushUp];
+    }
+    else if (control.selectedSegmentIndex == 1) {
+        [_label setAnimationType:GCountableUILabelAnimationTypePushDown];
+    }
+    else if (control.selectedSegmentIndex == 2) {
+        [_label setAnimationType:GCountableUILabelAnimationTypeFade];
+    }
+    else if (control.selectedSegmentIndex == 3) {
+        [_label setAnimationType:GCountableUILabelAnimationTypeNone];
+    }
+}
+
+- (IBAction)textAlignChange:(id)sender
+{
+    // TODO : Support it changable on the go
+    UISegmentedControl *control = (UISegmentedControl *)sender;
+    if (control.selectedSegmentIndex == 0) {
+        [_label setTextAlignment:NSTextAlignmentLeft];
+    }
+    else if (control.selectedSegmentIndex == 1) {
+        [_label setTextAlignment:NSTextAlignmentCenter];
+    }
+    else if (control.selectedSegmentIndex == 2) {
+        [_label setTextAlignment:NSTextAlignmentRight];
+    }
 }
 
 @end
